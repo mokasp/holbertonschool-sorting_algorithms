@@ -5,7 +5,7 @@ void quick_sort(int *array, size_t size)
 	int low, high;
 	size_t tHigh;
 	low = 0;
-	tHigh = size;
+	tHigh = size - 1;
 	high = (int)tHigh;
 	
 
@@ -18,14 +18,13 @@ void quickSort(int *array, int low, int high, size_t size)
 
 	if (low < high)
 	{
-		pi = partition(array, low, high);
+		pi = partition(array, low, high, size);
 		quickSort(array, low, pi - 1, size);
-		print_array(array, size);
 		quickSort(array, pi + 1, high, size);
 	}
 }
 
-int partition(int *array, int low, int high)
+int partition(int *array, int low, int high, size_t size)
 {
 	int i, j;
 	int pivot;
@@ -38,9 +37,11 @@ int partition(int *array, int low, int high)
 		{
 			i++;
 			swap(&array[i], &array[j]);
+			print_array(array, size);
 		}		
 	}
 	swap(&array[i + 1], &array[high]);
+	print_array(array, size);
 	return (i + 1);
 }
 
