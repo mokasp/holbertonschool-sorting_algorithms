@@ -12,7 +12,7 @@ void insertion_sort_list(listint_t **list)
 		current->prev = current->next = NULL;
 		sortedInsert(&sorted, current);
 		*list = sorted;
-		print_list(list);
+		print_list(*list);
 		current = next;		
 	}
 	*list = sorted;
