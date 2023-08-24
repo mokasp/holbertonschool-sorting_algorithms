@@ -1,5 +1,12 @@
 #include "sort.h"
 
+/**
+ * selection_sort - sorts array of ints using selection sort
+ * @array: array to sort
+ * @size: size of array to sort
+ *
+ * Return: void
+ */
 void selection_sort(int *array, size_t size)
 {
 	size_t step, min, i;
@@ -20,6 +27,13 @@ void selection_sort(int *array, size_t size)
 	}
 }
 
+/**
+ * swap - swaps two elements of array
+ * @a: first element
+ * @b: second element
+ *
+ * Return: void
+ */
 void swap(int *a, int *b)
 {
 	int tmp;
